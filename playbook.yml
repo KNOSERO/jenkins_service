@@ -4,6 +4,7 @@
 
   vars:
     host_path: "{{ playbook_dir }}"
+    server_dir: "{{ playbook_dir | basename }}"
 
   tasks:
     - name: Deploy Docker
