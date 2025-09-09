@@ -20,4 +20,5 @@ services:
 networks:
   jenkins:
     name: jenkins
+    external: true
     driver: bridge

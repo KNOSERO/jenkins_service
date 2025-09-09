@@ -4,8 +4,11 @@
 
   vars:
     host_path: "{{ playbook_dir }}"
-    server_dir: "{{ playbook_dir | basename }}"
 
   tasks:
+    - name: Set Server Sir
+      set_fact:
+        server_dir: "{{ (playbook_dir | basename) | regex_replace('^.* ', '') }}"
+
     - name: Deploy Docker
       include_tasks: docker/playbook.yml
